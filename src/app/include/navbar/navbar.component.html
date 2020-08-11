@@ -1,0 +1,54 @@
+<!-- <nav class="navbar navbar-expand-lg bg-info fixed-top mx-0">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" routerLink="/">Info Color</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="example-navbar-info" aria-controls="example-navbar-info" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      </div>
+      <div class="collapse navbar-collapse" id="example-navbar-info">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/login">
+              <p>Login</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">
+              <p>Register</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">
+              <p (click)="logout()">Logout</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg bg-info fixed-top">
+    <div class="container">
+    <a class="navbar-brand font-bold" routerLink="/">OkSulotion</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" *ngIf="!userIsLogin()">
+                <a class="nav-link" routerLink="/login"> login & Register</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-gear"></i> Settings</a>
+            </li> -->
+            <li class="nav-item dropdown" *ngIf="userIsLogin()">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Profile </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
+                    <!-- <a class="dropdown-item" href="#">My account</a> -->
+                    <a class="dropdown-item" (click)="logout()" >Log out</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+  </div>
+</nav>

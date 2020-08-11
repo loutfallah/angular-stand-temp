@@ -1,0 +1,10 @@
+.fixed-bottom {
+    width: 50%;
+    margin: auto;
+    
+}
+.scrol-hid , body{
+    overflow: hidden;
+    overflow-y: hidden;
+  overflow-x: hidden;
+}

@@ -1,0 +1,48 @@
+.card-header .title {
+    font-size: 17px;
+    color: #000;
+}
+.card-header .accicon {
+  float: right;
+  font-size: 20px;  
+  width: 1.2em;
+}
+.card-header{
+  cursor: pointer;
+  border-bottom: none;
+}
+.card{
+  border: 1px solid #ddd;
+}
+.card-body{
+  border-top: 1px solid #ddd;
+}
+.card-header:not(.collapsed) .rotate-icon {
+  transform: rotate(180deg);
+}
+
+.container .btn-style {
+    position: absolute;
+    top: 11%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 10px;
+    padding: 5px 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .nopadding {
+    padding: 5px !important;
+    margin: 10px !important;
+    outline: 2px solid #333;
+    background: #333;
+  }
+
+  .zinesx{
+    z-index: 999;
+  }

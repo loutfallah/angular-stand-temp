@@ -1,0 +1,33 @@
+<h1>Ajouter un stand</h1>
+<form [formGroup]="standForm" (ngSubmit)="RegisterStand()">
+    <div class="form-group">
+      <label for="name">Nom de stand</label>
+      <input id="name" type="text" class="form-control" formControlName="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Description</label>
+      <textarea class="form-control" aria-label="With textarea" formControlName="description" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="name">select theme</label>
+        <select class="custom-select" id="inputGroupSelect01" formControlName="theme_id" required>
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+    </div>
+    <div class="form-group">
+        <label for="name">select EspaceExposition</label>
+        <select class="custom-select" id="inputGroupSelect01" formControlName="espace_exposition_id" required>
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
+    </div>
+</form>

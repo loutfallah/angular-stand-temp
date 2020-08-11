@@ -1,0 +1,6 @@
+.nopadding {
+    padding: 5px !important;
+    margin: 10px !important;
+    outline: 2px solid #333;
+    background: #333;
+  }

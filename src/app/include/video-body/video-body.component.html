@@ -1,0 +1,36 @@
+<div class="modal fade" id="modal06" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Vidéos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+              <div class="row">
+<!--                 <div class="col-sm-3 nopadding">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="//www.youtube.com/embed/Nvs5pqf-DMA" allowfullscreen></iframe>
+                  </div>
+                </div> -->
+                <div class="col-sm-3 nopadding" *ngFor="let item of _video">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    
+                    <iframe width="560" height="315" [src]="getEmbedUrl(item.link)" allowfullscreen></iframe>
+                  </div>
+                </div>
+                
+
+
+              </div>
+              
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>

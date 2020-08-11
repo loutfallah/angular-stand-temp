@@ -1,0 +1,473 @@
+<!-- start space of hidden navba -->
+<nav class="navbar navbar-default mt-5">
+</nav>
+<!-- start navbar -->
+<app-navbar></app-navbar>
+
+<!-- start sidebar -->
+<div class="page-wrapper chiller-theme toggled">
+<app-sidebar></app-sidebar>
+
+
+<!-- start body of  page -->
+
+<!-- <div class="container">
+
+            <div class="row mt-3">
+                <div class="col-11" type="button" data-toggle="collapse" data-target="#demo1">
+                    Ajouter Galeries
+                </div>
+                <div class="col-1">
+                    <p><i class="fa fa-sort-down"></i></p>
+                </div>
+
+                <div id="demo1" class="collapse">
+                    
+                    <form [formGroup]="galerieForm" (ngSubmit)="registerGalerie()">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="name">Description</label>
+                                <input id="name01" type="text" class="form-control" formControlName="name" required>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="link">url</label>
+                                <input id="link01" type="text" class="form-control" formControlName="link" required>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="name">keyword</label>
+                                <input id="keyword" type="text" class="form-control" formControlName="keyword" required>
+                            </div>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-11" type="button" data-toggle="collapse" data-target="#demo2">
+                    Ajouter Document
+                </div>
+                <div class="col-1">
+                    <p><i class="fa fa-sort-down"></i></p>
+                </div>
+
+                <div id="demo2" class="collapse">
+                    <form [formGroup]="DocumentForm" (ngSubmit)="registerDocument()">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="name">Nom</label>
+                                <input id="name02" type="text" class="form-control" formControlName="name" required>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="link">url</label>
+                                <input id="link02" type="text" class="form-control" formControlName="file" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-11" type="button" data-toggle="collapse" data-target="#demo3">
+                    Ajouter lien externs
+                </div>
+                <div class="col-1">
+                    <p><i class="fa fa-sort-down"></i></p>
+                </div>
+
+                <div id="demo3" class="collapse">
+                    <form [formGroup]="LienExternsForm" (ngSubmit)="registerLienExterns()">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="name">Nom</label>
+                                <input id="name03" type="text" class="form-control" formControlName="name" required>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="link">url</label>
+                                <input id="linkà3" type="text" class="form-control" formControlName="link" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-11" type="button" data-toggle="collapse" data-target="#demo4">
+                    Ajouter Reseaux sociaux
+                </div>
+                <div class="col-1">
+                    <p><i class="fa fa-sort-down"></i></p>
+                </div>
+
+                <div id="demo4" class="collapse">
+                    <form [formGroup]="ReseauxForm" (ngSubmit)="registerReseaux()">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="name">sélectionner un réseau social</label>
+                                
+                                <select class="form-control" id="exampleFormControlSelect1" formControlName="name" required>
+                                    <option>facebook</option>
+                                    <option>youtube</option>
+                                    <option>twitter</option>
+                                    <option>google plus</option>
+                                    <option>instagram</option>
+                                    <option>linkedIn</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="link">url</label>
+                                <input id="link04" type="text" class="form-control" formControlName="link" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-11" type="button" data-toggle="collapse" data-target="#demo5">
+                    Ajouter Video
+                </div>
+                <div class="col-1">
+                    <p><i class="fa fa-sort-down"></i></p>
+                </div>
+
+                <div id="demo5" class="collapse">
+                    <form [formGroup]="VideoForm" (ngSubmit)="registerVideo()">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label for="name">Nom</label>
+                                <input id="name05" type="text" class="form-control" formControlName="name" required>
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="link">url</label>
+                                <input id="link05" type="text" class="form-control" formControlName="link" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+
+</div> -->
+
+
+<main class="page-content">
+    <div class="container shadow mb-3">
+        
+            <div class="container">
+                
+                <div class="accordion" id="accordionExample">
+            
+                    <div class="card">
+                        <div class="card-header collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false">     
+                            <span class="title">Gestion Galeries </span>
+                            <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                        </div>
+                        <div id="collapse1" class="collapse" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 ">
+                                        <button class="btn btn-primary float-right my-2" data-toggle="modal" data-target="#modalGalerie"><i class="fas fa-plus-square"></i></button>
+            
+                                    </div>
+            
+                                    <div class="col-3 mh-25 " *ngFor="let item of _galerie">
+                                        <img src="{{item.link}}" alt="..." class="img-thumbnail mh-25" >
+                                        <button type="button" class="btn-style" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu zinesx" aria-labelledby="dropdownMenuOffset">
+                                            <a class="dropdown-item" href="#">mettre à jour</a>
+                                            <a class="dropdown-item" (click)="suprimerGalerie(item.id)">supprimer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false">     
+                            <span class="title">Gestion Document</span>
+                            <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                        </div>
+                        <div id="collapse2" class="collapse" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 ">
+                                        <button class="btn btn-primary float-right my-2" data-toggle="modal" data-target="#modalDocument"><i class="fas fa-plus-square"></i></button>
+                                    </div>
+            
+                                    <div class="col-3">
+                                        ...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false">
+                            <span class="title">Gestion des liens externes</span>
+                            <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                        </div>
+                        <div id="collapse3" class="collapse" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 ">
+                                        <button class="btn btn-primary float-right my-2" data-toggle="modal" data-target="#modalLienExterns"><i class="fas fa-plus-square"></i></button>
+                                    </div>
+            
+                                    <div class="col-3">
+                                        ...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="card">
+                        <div class="card-header collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false">
+                            <span class="title">Gestion Reseaux sociaux</span>
+                            <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                        </div>
+                        <div id="collapse4" class="collapse" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 ">
+                                        <button class="btn btn-primary float-right my-2" data-toggle="modal" data-target="#modalReseaux"><i class="fas fa-plus-square"></i></button>
+                                    </div>
+            
+                                    <div class="col-12">
+            
+                                        <table class="table table-striped">
+                                            <thead>
+                                              <tr >
+                                                <th scope="col">Reseaux sociaux</th>
+                                                <th scope="col">link</th>
+                                                <th scope="col">Action</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr *ngFor="let item of _reseau">
+                                                <td>{{item.name}}</td>
+                                                <td>{{item.link}}</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-outline-primary"><i class="far fa-edit"></i></button>
+                                                        <button type="button" class="btn btn-outline-primary"><i class="fas fa-trash-alt"></i></button>
+                                                    </div>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="card">
+                        <div class="card-header collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false">
+                            <span class="title">Gestion des Videos</span>
+                            <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                        </div>
+                        <div id="collapse5" class="collapse" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 ">
+                                        <button class="btn btn-primary float-right my-2" data-toggle="modal" data-target="#modalVideo"><i class="fas fa-plus-square"></i></button>
+                                    </div>
+            
+                                    <div class="col-4" *ngFor="let item of _video">
+            
+                                        <button type="button" class="btn-style" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu zinesx" aria-labelledby="dropdownMenuOffset">
+                                            <a class="dropdown-item" (click)="getVideoById(item.id)" data-toggle="modal" data-target="#modalVideo">mettre à jour</a>
+                                            <a class="dropdown-item" (click)="suprimerVideo(item.id)">supprimer</a>
+                                        </div>
+            
+                                        <iframe width="300" height="150" [src]="getEmbedUrl(item.link)" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</main>
+</div>
+
+<!-- modal for add Ajouter Galerie -->
+
+
+<div id="modalGalerie" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Ajouter Galeries</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="galerieForm" (ngSubmit)="registerGalerie()">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="name">Description</label>
+                        <input id="name01" type="text" class="form-control" formControlName="name" required>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="link">url</label>
+                        <input id="link01" type="text" class="form-control" formControlName="link" required>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="name">keyword</label>
+                        <input id="keyword" type="text" class="form-control" formControlName="keyword" required>
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+            </form>
+          </div>
+      </div>
+    </div>
+</div>
+
+<!-- modal for add Ajouter Document -->
+
+<div id="modalDocument" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Ajouter Document</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="DocumentForm" (ngSubmit)="registerDocument()">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="name">Nom</label>
+                        <input id="name02" type="text" class="form-control" formControlName="name" required>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="link">url</label>
+                        <input id="link02" type="text" class="form-control" formControlName="file" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+            </form>
+          </div>
+      </div>
+    </div>
+</div>
+
+<!-- modal for add Ajouter lien externs -->
+
+<div id="modalLienExterns" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Ajouter lien externs</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="LienExternsForm" (ngSubmit)="registerLienExterns()">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="name">Nom</label>
+                        <input id="name03" type="text" class="form-control" formControlName="name" required>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="link">url</label>
+                        <input id="linkà3" type="text" class="form-control" formControlName="link" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+            </form>
+          </div>
+      </div>
+    </div>
+</div>
+
+<!-- modal for add Ajouter Reseaux sociaux -->
+
+<div id="modalReseaux" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Ajouter Reseaux sociaux</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="ReseauxForm" (ngSubmit)="registerReseaux()">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="name">sélectionner un réseau social</label>
+                        <!-- <input id="name04" type="text" class="form-control" formControlName="name" required> -->
+                        
+                        <select class="form-control" id="exampleFormControlSelect1" formControlName="name" required>
+                            <option>facebook</option>
+                            <option>youtube</option>
+                            <option>twitter</option>
+                            <option>google plus</option>
+                            <option>instagram</option>
+                            <option>linkedIn</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="link">url</label>
+                        <input id="link04" type="text" class="form-control" formControlName="link" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+            </form>
+          </div>
+      </div>
+    </div>
+</div>
+
+<!-- modal for add Ajouter Videos -->
+
+<div id="modalVideo" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Ajouter Video</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="VideoForm" (ngSubmit)="registerVideo()">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="name">Nom</label>
+                        <input id="name05" type="text" class="form-control" formControlName="name" required>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="link">url</label>
+                        <input id="link05" type="text" class="form-control" formControlName="link" required>
+                    </div>
+                    <input type="hidden" formControlName="id" required>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+            </form>
+          </div>
+      </div>
+    </div>
+</div>

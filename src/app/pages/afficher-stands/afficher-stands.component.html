@@ -1,0 +1,69 @@
+
+<!-- start navbar -->
+<app-navbar></app-navbar>
+
+<!-- start sidebar -->
+<app-sidebar></app-sidebar>
+
+
+<!-- start body of  page -->
+
+<div class="container-fluid p-0 scrol-hid">
+    <div class="row">
+      <div class="col-12 p-0 ">
+        <img class="img-fluid  " src="assets/images/theme-stands/test-01.jpg">
+      </div>
+    </div>  
+</div>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-bottom rounded-pill">
+    <div class="container justify-content-center">
+        <ul class="nav navbar-nav flex-fill justify-content-center">
+            <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#modal01" >Entreprise</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#modal02" >sociaux</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#modal03" >Liens</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#modal04" >Email</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#modal05" >Documents</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#modal06" >Vidéos</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#modal07" >Galerie</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#modal08" >Témoignages</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#modal09">FAQ</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- start Moale 01 Présentation de l'entreprise -->
+
+<app-entreprise-body></app-entreprise-body>
+
+<!-- start Moale 02 Reseaux sociaux -->
+
+<app-reseaux-sociaux-body [_reseau]="_reseau" ></app-reseaux-sociaux-body>
+
+<!-- start Moale 03 liens-externes-->
+
+<app-liens-externes-body [_lien_extern]="_lien_extern"></app-liens-externes-body>
+
+  <!-- start Moale 04 Envoyer un email-->
+
+<app-send-email></app-send-email>
+
+  <!-- start Moale 05 Documents-->
+
+<app-document-body [_document]="_document"></app-document-body>
+
+  <!-- start Moale 06 Vidéos-->
+
+<app-video-body [_video]="_video"></app-video-body>
+
+  <!-- start Moale 07 Galerie-->
+
+<app-galerie-body [_galerie]="_galerie" ></app-galerie-body>
+
+  <!-- start Moale 08 Temoignages -->
+
+<app-temoignage-body [_temoignage]="_temoignage" ></app-temoignage-body>
+
+  <!-- start Moale 09 FAQ-->
+
+<app-faq-body></app-faq-body>

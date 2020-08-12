@@ -1,21 +1,14 @@
 
-<!-- start space of hidden navba -->
-<nav class="navbar navbar-default mt-5">
-</nav>
-<!-- start navbar -->
-<app-navbar></app-navbar>
-
-<!-- start sidebar -->
-<div class="page-wrapper chiller-theme toggled">
-<app-sidebar></app-sidebar>
 
 
-<!-- start body of  page -->
-
-
-<main class="page-content">
-     <div class="container shadow mb-3">
-         <app-stands-body></app-stands-body>  
-     </div>
- </main>
+<div class="page-wrapper">
+    <!-- START HEADER-->
+    <app-navbar></app-navbar>
+    <!-- END HEADER-->
+    <!-- START SIDEBAR-->
+    <app-sidebar></app-sidebar>
+    <!-- END SIDEBAR-->
+    <div class="content-wrapper">
+        <app-stands-body></app-stands-body> 
+    </div>
 </div>

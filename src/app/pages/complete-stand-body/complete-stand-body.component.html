@@ -1,163 +1,19 @@
 <!-- start space of hidden navba -->
-<nav class="navbar navbar-default mt-5">
-</nav>
+<!-- <nav class="navbar navbar-default mt-5">
+</nav> -->
 <!-- start navbar -->
-<app-navbar></app-navbar>
 
-<!-- start sidebar -->
-<div class="page-wrapper chiller-theme toggled">
-<app-sidebar></app-sidebar>
-
-
-<!-- start body of  page -->
-
-<!-- <div class="container">
-
-            <div class="row mt-3">
-                <div class="col-11" type="button" data-toggle="collapse" data-target="#demo1">
-                    Ajouter Galeries
-                </div>
-                <div class="col-1">
-                    <p><i class="fa fa-sort-down"></i></p>
-                </div>
-
-                <div id="demo1" class="collapse">
-                    
-                    <form [formGroup]="galerieForm" (ngSubmit)="registerGalerie()">
-                        <div class="row">
-                            <div class="form-group col-6">
-                                <label for="name">Description</label>
-                                <input id="name01" type="text" class="form-control" formControlName="name" required>
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="link">url</label>
-                                <input id="link01" type="text" class="form-control" formControlName="link" required>
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="name">keyword</label>
-                                <input id="keyword" type="text" class="form-control" formControlName="keyword" required>
-                            </div>
-
-                        </div>
-                        <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="row mt-3">
-                <div class="col-11" type="button" data-toggle="collapse" data-target="#demo2">
-                    Ajouter Document
-                </div>
-                <div class="col-1">
-                    <p><i class="fa fa-sort-down"></i></p>
-                </div>
-
-                <div id="demo2" class="collapse">
-                    <form [formGroup]="DocumentForm" (ngSubmit)="registerDocument()">
-                        <div class="row">
-                            <div class="form-group col-6">
-                                <label for="name">Nom</label>
-                                <input id="name02" type="text" class="form-control" formControlName="name" required>
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="link">url</label>
-                                <input id="link02" type="text" class="form-control" formControlName="file" required>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="row mt-3">
-                <div class="col-11" type="button" data-toggle="collapse" data-target="#demo3">
-                    Ajouter lien externs
-                </div>
-                <div class="col-1">
-                    <p><i class="fa fa-sort-down"></i></p>
-                </div>
-
-                <div id="demo3" class="collapse">
-                    <form [formGroup]="LienExternsForm" (ngSubmit)="registerLienExterns()">
-                        <div class="row">
-                            <div class="form-group col-6">
-                                <label for="name">Nom</label>
-                                <input id="name03" type="text" class="form-control" formControlName="name" required>
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="link">url</label>
-                                <input id="linkà3" type="text" class="form-control" formControlName="link" required>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="row mt-3">
-                <div class="col-11" type="button" data-toggle="collapse" data-target="#demo4">
-                    Ajouter Reseaux sociaux
-                </div>
-                <div class="col-1">
-                    <p><i class="fa fa-sort-down"></i></p>
-                </div>
-
-                <div id="demo4" class="collapse">
-                    <form [formGroup]="ReseauxForm" (ngSubmit)="registerReseaux()">
-                        <div class="row">
-                            <div class="form-group col-6">
-                                <label for="name">sélectionner un réseau social</label>
-                                
-                                <select class="form-control" id="exampleFormControlSelect1" formControlName="name" required>
-                                    <option>facebook</option>
-                                    <option>youtube</option>
-                                    <option>twitter</option>
-                                    <option>google plus</option>
-                                    <option>instagram</option>
-                                    <option>linkedIn</option>
-
-                                </select>
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="link">url</label>
-                                <input id="link04" type="text" class="form-control" formControlName="link" required>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="row mt-3">
-                <div class="col-11" type="button" data-toggle="collapse" data-target="#demo5">
-                    Ajouter Video
-                </div>
-                <div class="col-1">
-                    <p><i class="fa fa-sort-down"></i></p>
-                </div>
-
-                <div id="demo5" class="collapse">
-                    <form [formGroup]="VideoForm" (ngSubmit)="registerVideo()">
-                        <div class="row">
-                            <div class="form-group col-6">
-                                <label for="name">Nom</label>
-                                <input id="name05" type="text" class="form-control" formControlName="name" required>
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="link">url</label>
-                                <input id="link05" type="text" class="form-control" formControlName="link" required>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
-                    </form>
-                </div>
-            </div>
-
-</div> -->
-
-
-<main class="page-content">
-    <div class="container shadow mb-3">
+<div class="page-wrapper">
+    <!-- START HEADER-->
+    <app-navbar></app-navbar>
+    <nav class="navbar navbar-default mt-2">
+    </nav>
+    <!-- END HEADER-->
+    <!-- START SIDEBAR-->
+    <app-sidebar></app-sidebar>
+    <!-- END SIDEBAR-->
+    <div class="content-wrapper">
+        <div class="container shadow mb-3">
         
             <div class="container">
                 
@@ -301,9 +157,15 @@
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-</main>
 </div>
+
+
+
+    
+
+
 
 <!-- modal for add Ajouter Galerie -->
 

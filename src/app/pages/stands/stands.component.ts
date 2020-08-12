@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Helpers } from 'src/app/helpers';
 
 @Component({
   selector: 'app-stands',
@@ -10,6 +11,7 @@ export class StandsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    Helpers.initLayout();
   }
 
 }

@@ -9,6 +9,7 @@ import { ReseauxSociauxeService } from 'src/app/service/reseaux-sociauxe.service
 import { StandService } from 'src/app/service/stand.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import Swal from 'sweetalert2';
+import { Helpers } from 'src/app/helpers';
 
 @Component({
   selector: 'app-complete-stand-body',
@@ -36,6 +37,7 @@ export class CompleteStandBodyComponent implements OnInit {
     this._route.params.subscribe(params => {
       this._stand_id = params['id'];
      this.getStandById(this._stand_id);
+     Helpers.initLayout();
      
   });
   }

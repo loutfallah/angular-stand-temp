@@ -1,0 +1,101 @@
+<div class="page-wrapper">
+    <!-- START HEADER-->
+    <app-navbar></app-navbar>
+    <nav class="navbar navbar-default mt-2">
+    </nav>
+    <!-- END HEADER-->
+    <!-- START SIDEBAR-->
+    <app-sidebar-secondly></app-sidebar-secondly>
+    <!-- END SIDEBAR-->
+<div class="content-wrapper">
+     <div class="container shadow mb-3 ibox">
+        <div class="ibox-head">
+            <div class="ibox-title"> <i class="sidebar-item-icon fa fa-users"></i> Gestion des Reseaux sociaux</div>
+            <div class="ibox-tools">
+                <button class="btn btn-info m-r-5" data-toggle="modal" data-target="#modalLienExterns">
+                    <span class="active-hidden"><i class="fa fa-plus"></i> Ajouter</span>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="ibox">
+            <div class="ibox-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>link</th>
+                                <th>Créé à</th>
+                                <th>dernière mise à jour</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of _reseau">
+                                <td>{{ item.name }}</td>
+                                <td>
+                                    <a href="{{item.link}}"  target="_blank" *ngIf="item.link.length <= 40 ">{{ item.link | slice: 0: 30 }}</a>
+                                    <a href="{{item.link}}"  target="_blank" *ngIf="item.link.length > 40 ">{{ item.link | slice: 0: 30 }} ...</a>
+
+                                </td>
+                                <td>{{ item.created_at | date: 'dd-MM-yyyy'}}</td>
+                                <td>{{ item.updated_at | date: 'dd-MM-yyyy'}}</td>
+                                <td>
+                                    <button class="btn btn-default btn-xs m-r-5" (click)="getLienReseauxById(item.id)" data-toggle="modal" data-target="#modalLienExterns"><i class="fa fa-pencil font-14"></i></button>
+                                    <button class="btn btn-default btn-xs" (click)="deleteReseaux(item.id)"><i class="fa fa-trash font-14"></i></button>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- modal for add Ajouter lien externs -->
+
+<div id="modalLienExterns" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Ajouter lien externs</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="ngOnInit()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="ReseauxForm" (ngSubmit)="addReseaux()">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="name">sélectionner un réseau social</label>
+                        <!-- <input id="name04" type="text" class="form-control" formControlName="name" required> -->
+                        
+                        <select class="form-control" id="exampleFormControlSelect1" formControlName="name" required>
+                            <option>facebook</option>
+                            <option>youtube</option>
+                            <option>twitter</option>
+                            <option>google plus</option>
+                            <option>instagram</option>
+                            <option>linkedIn</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="link">url</label>
+                        <input id="linkà3" type="text" class="form-control" formControlName="link" required>
+                    </div>
+                </div>
+                <input type="hidden" formControlName="id" required>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary mt-3" *ngIf="ReseauxForm.get('id').value == '' ">Ajouter</button>
+                    <button type="submit" class="btn btn-success mt-3" *ngIf="ReseauxForm.get('id').value !== '' ">Modifier</button>
+                </div>
+            </form>
+          </div>
+      </div>
+    </div>
+</div>

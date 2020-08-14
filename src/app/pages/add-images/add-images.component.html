@@ -1,0 +1,83 @@
+<div class="page-wrapper">
+    <!-- START HEADER-->
+    <app-navbar></app-navbar>
+    <nav class="navbar navbar-default mt-2">
+    </nav>
+    <!-- END HEADER-->
+    <!-- START SIDEBAR-->
+    <app-sidebar-secondly></app-sidebar-secondly>
+    <!-- END SIDEBAR-->
+<div class="content-wrapper">
+     <div class="container shadow mb-3 ibox">
+        <div class="ibox-head">
+            <div class="ibox-title"> <i class="sidebar-item-icon fa fa-image"></i> Gestion des images</div>
+            <div class="ibox-tools">
+                <button class="btn btn-info m-r-5" data-toggle="modal" data-target="#modalGalerie">
+                    <span class="active-hidden"><i class="fa fa-plus"></i> Ajouter</span>
+                </button>
+            </div>
+        </div>
+
+
+         <div class="row pt-5">
+            
+                <div class="col-lg-3" *ngFor="let item of _galerie">
+                    <div class="ibox">
+                        <div class="ibox-head bg-primary tit-mod1">
+                            <div class="ibox-title"> {{ item.name | slice: 0: 10 }}</div>
+                            <div class="ibox-tools">
+                                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-99px, 20px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                    <a class="dropdown-item"  (click)="getImageById(item.id)" data-toggle="modal" data-target="#modalGalerie">Mettre à jour</a>
+                                    <a class="dropdown-item" (click)="deleteimage(item.id)">Supprimer</a>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="card-img-top" src="{{item.link}}">
+                </div>
+                
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+<!-- modal for add Ajouter Galerie -->
+
+
+<div id="modalGalerie" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Ajouter Galeries</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"  (click)="ngOnInit()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="galerieForm" (ngSubmit)="addimage()">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="name">Description</label>
+                        <input id="name01" type="text" class="form-control" formControlName="name" required>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="link">url</label>
+                        <input id="link01" type="text" class="form-control" formControlName="link" required>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="name">keyword</label>
+                        <input id="keyword" type="text" class="form-control" formControlName="keyword" required>
+                    </div>
+                    <input type="hidden" formControlName="id" required>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary mt-3" *ngIf="galerieForm.get('id').value == '' ">Ajouter</button>
+                    <button type="submit" class="btn btn-success mt-3" *ngIf="galerieForm.get('id').value !== '' ">Modifier</button>
+                </div>
+            </form>
+          </div>
+      </div>
+    </div>
+</div>

@@ -18,4 +18,10 @@ export class ReseauxSociauxeService {
   suprimerReseaux(id){
     return this.http.delete<any>(this.api+"/reseaux-sociaux/"+ id);
   }
+  getReseauxById(id){
+    return this.http.get<any>(this.api+"/reseaux-sociaux/"+ id);
+  }
+  updateReseaux(model: any,id){
+    return this.http.put(this.api+"/reseaux-sociaux/"+ id,model);
+  }
 }

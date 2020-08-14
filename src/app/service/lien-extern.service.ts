@@ -18,4 +18,10 @@ export class LienExternService {
   suprimerLienExtern(id){
     return this.http.delete<any>(this.api+"/lien-extern/"+ id);
   }
+  getLienExternById(id){
+    return this.http.get<any>(this.api+"/lien-extern/"+ id);
+  }
+  updateLienExtern(model: any,id){
+    return this.http.put(this.api+"/lien-extern/"+ id,model);
+  }
 }

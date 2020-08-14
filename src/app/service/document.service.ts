@@ -18,4 +18,10 @@ export class DocumentService {
   suprimerDocument(id){
     return this.http.delete<any>(this.api+"/document/"+ id);
   }
+  getDocumentById(id){
+    return this.http.get<any>(this.api+"/document/"+ id);
+  }
+  updateDocument(model: any,id){
+    return this.http.put(this.api+"/document/"+ id,model);
+  }
 }

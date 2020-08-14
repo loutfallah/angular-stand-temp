@@ -1,0 +1,48 @@
+
+<nav class="page-sidebar" id="sidebar">
+    <div id="sidebar-collapse">
+        <div class="admin-block d-flex">
+            
+            <div class="admin-info">
+                <div class="font-strong">James Brown</div><small>Administrator</small></div>
+        </div>
+        <ul class="side-menu metismenu">
+            <li>
+                <a class="active"  [routerLink]="['/static', _stand_id]"><i class="sidebar-item-icon fa fa-bar-chart"></i>
+                    <span class="nav-label">Statistiques</span>
+                </a>
+            </li>
+            <li class="heading">FEATURES</li>
+            
+            <li>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-photo"></i>
+                    <span class="nav-label">Média</span><i class="fa fa-angle-left arrow"></i></a>
+                <ul class="nav-2-level collapse" aria-expanded="false">
+                    <li>
+                        <a [routerLink]="['/img', _stand_id]">les images</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/video', _stand_id]">les vidéos</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="active" [routerLink]="['/document', _stand_id]"><i class="sidebar-item-icon fa fa-file"></i>
+                    <span class="nav-label">Document</span>
+                </a>
+            </li>
+            <li>
+                <a class="active" [routerLink]="['/sociaux', _stand_id]"><i class="sidebar-item-icon fa fa-users"></i>
+                    <span class="nav-label">Reseaux sociaux</span>
+                </a>
+            </li>
+            <li>
+                <a class="active" [routerLink]="['/liens', _stand_id]"><i class="sidebar-item-icon fa fa-link"></i>
+                    <span class="nav-label">Liens externes</span>
+                </a>
+            </li>
+           
+
+        </ul>
+    </div>
+  </nav>

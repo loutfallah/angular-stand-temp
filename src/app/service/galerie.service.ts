@@ -22,4 +22,7 @@ export class GalerieService {
   getgalerieById(id){
     return this.http.get<any>(this.api+"/galerie/"+ id);
   }
+  updateGalerie(model: any,id){
+    return this.http.put(this.api+"/galerie/"+ id,model);
+  }
 }

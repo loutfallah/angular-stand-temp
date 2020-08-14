@@ -14,7 +14,7 @@
                       <th>ID</th>
                       <th>Nom</th>
                       <th>Créé à</th>
-                      <th>Mettre à jour à</th>
+                      <th>Dernière mise à jour</th>
                       <th>Le progrès</th>
                       <th>Status</th>
                       <th width="91px">Action</th>
@@ -30,7 +30,7 @@
                         {{item.created_at | date: 'dd-MM-yyyy'}}
                       </td>
                       <td>
-                        {{item.update_at | date: 'dd-MM-yyyy'}}
+                        {{item.updated_at | date: 'dd-MM-yyyy'}}
                       </td>
                       <td>
                         <div class="progress">
@@ -46,7 +46,7 @@
                         <div class="row">
 
                           <div class="btn-group ibox-body p-0">
-                            <a [routerLink]="['/complete-stand', item.id]" class="btn btn-success  btn-sm"><i class="fa fa-edit"></i></a>
+                            <a [routerLink]="['/static', item.id]" class="btn btn-success  btn-sm"><i class="fa fa-edit"></i></a>
                             <a [routerLink]="['/stand', item.id]" class="btn btn-warning  btn-sm"><i class="fa fa-eye"></i></a>
                             <a (click)="deleteStand(item.id)" class="btn btn-danger  btn-sm"> <i class="fa fa-times"> </i></a>
                         </div>

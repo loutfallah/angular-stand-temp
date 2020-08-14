@@ -30,6 +30,13 @@ import { EntrepriseBodyComponent } from './include/entreprise-body/entreprise-bo
 import { ReseauxSociauxBodyComponent } from './include/reseaux-sociaux-body/reseaux-sociaux-body.component';
 import { LiensExternesBodyComponent } from './include/liens-externes-body/liens-externes-body.component';
 import { AuthGuard } from './guards/auth.guard';
+import { SidebarSecondlyComponent } from './include/sidebar-secondly/sidebar-secondly.component';
+import { AddImagesComponent } from './pages/add-images/add-images.component';
+import { AddVideosComponent } from './pages/add-videos/add-videos.component';
+import { AddReseauxSociauxComponent } from './pages/add-reseaux-sociaux/add-reseaux-sociaux.component';
+import { AddDocumentComponent } from './pages/add-document/add-document.component';
+import { AddLiensExternesComponent } from './pages/add-liens-externes/add-liens-externes.component';
+import { StaticStandComponent } from './pages/static-stand/static-stand.component';
 
 @NgModule({
   declarations: [ 
@@ -56,7 +63,14 @@ import { AuthGuard } from './guards/auth.guard';
     FaqBodyComponent,
     EntrepriseBodyComponent,
     ReseauxSociauxBodyComponent,
-    LiensExternesBodyComponent
+    LiensExternesBodyComponent,
+    SidebarSecondlyComponent,
+    AddImagesComponent,
+    AddVideosComponent,
+    AddReseauxSociauxComponent,
+    AddDocumentComponent,
+    AddLiensExternesComponent,
+    StaticStandComponent
   ],
   imports: [
     BrowserModule,

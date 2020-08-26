@@ -13,7 +13,7 @@ import { LienExternService } from 'src/app/service/lien-extern.service';
 })
 export class AddLiensExternesComponent implements OnInit {
 
-  
+  submitted;
   _standData : Array<any>;
   _stand_id:number;
   _lien_extern : Array<any>;
@@ -28,14 +28,16 @@ export class AddLiensExternesComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.submitted = false;
+    const reg = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
     this._route.params.subscribe(params => {
       this._stand_id = params['id'];
      this.getStandById(this._stand_id);
      this.LienExternsForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      link: ['', Validators.required],
-      stand_id:[],
-      id: ['', Validators.required]
+      name: ['', [Validators.required, Validators.minLength(4),Validators.maxLength(20)]],
+      link: ['', [Validators.required, Validators.pattern(reg),Validators.minLength(4),Validators.maxLength(200)]],
+      stand_id:[''],
+      id: ['']
  
     });
      Helpers.initLayout();
@@ -158,4 +160,16 @@ reloadComponent() {
 closemodel(){
   document.getElementById("modalLienExterns").click();
 }
+
+onSubmit() {
+  this.submitted = true;
+  let formVlid= this.LienExternsForm.controls
+
+  // stop here if form is invalid
+  if (formVlid.name.errors || formVlid.link.errors) {
+      return;
+  }
+  this.addLienExterns();
+}
+get f() { return this.LienExternsForm.controls; }
 }

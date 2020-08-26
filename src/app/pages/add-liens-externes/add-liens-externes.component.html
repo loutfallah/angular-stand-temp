@@ -68,15 +68,26 @@
             </button>
           </div>
           <div class="modal-body">
-            <form [formGroup]="LienExternsForm" (ngSubmit)="addLienExterns()">
+            <form [formGroup]="LienExternsForm" (ngSubmit)="onSubmit()">
                 <div class="row">
                     <div class="form-group col-6">
                         <label for="name">Nom</label>
-                        <input id="name03" type="text" class="form-control" formControlName="name" required>
+                        <input id="name03" type="text" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name?.errors }">
+                        <div *ngIf="submitted && f.name?.errors" class="invalid-feedback">
+                            <label *ngIf="submitted && f.name?.errors.required" id="name-error" class="help-block error" for="name" >le nom est nécessaire.</label>
+                            <label *ngIf="submitted && f.name?.errors.minlength" id="name-error" class="help-block error" for="name" >le nom Doit être au moins 4 caractères.</label>
+                            <label *ngIf="submitted && f.name?.errors.maxlength" id="name-error" class="help-block error" for="name" >Le nom est trop long.</label>
+                        </div>
                     </div>
                     <div class="form-group col-6">
                         <label for="link">url</label>
-                        <input id="linkà3" type="text" class="form-control" formControlName="link" required>
+                        <input id="linkà3" type="text" class="form-control" formControlName="link" [ngClass]="{ 'is-invalid': submitted && f.link?.errors }">
+                        <div *ngIf="submitted && f.link?.errors" class="invalid-feedback">
+                            <label *ngIf="submitted && f.link?.errors.required" id="name-error" class="help-block error" for="name" >le line est nécessaire.</label>
+                            <label *ngIf="submitted && f.link?.errors.pattern" id="name-error" class="help-block error" for="name" >Veuillez saisir une URL valide.</label>
+                            <label *ngIf="submitted && f.link?.errors.maxlength" id="name-error" class="help-block error" for="name" >Le URL est trop long.</label>
+                            <label *ngIf="submitted && f.link?.errors.minlength" id="name-error" class="help-block error" for="name" >Le URL Doit être au moins 4 caractères.</label>
+                        </div>
                     </div>
                 </div>
                 <input type="hidden" formControlName="id" required>

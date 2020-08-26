@@ -14,7 +14,7 @@ import { ReseauxSociauxeService } from 'src/app/service/reseaux-sociauxe.service
 })
 export class AddReseauxSociauxComponent implements OnInit {
 
-  
+  submitted;
   _standData : Array<any>;
   _stand_id:number;
   _reseau : Array<any>;
@@ -29,14 +29,16 @@ export class AddReseauxSociauxComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.submitted = false;
+    const reg = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
     this._route.params.subscribe(params => {
       this._stand_id = params['id'];
      this.getStandById(this._stand_id);
      this.ReseauxForm = this.formBuilder.group({
       name: ['', Validators.required],
-      link: ['', Validators.required],
+      link: ['',[Validators.required, Validators.pattern(reg),Validators.minLength(4),Validators.maxLength(200)]],
       stand_id:[],
-      id: ['', Validators.required]
+      id: ['']
  
     });
      Helpers.initLayout();
@@ -160,4 +162,16 @@ closemodel(){
   document.getElementById("modalLienExterns").click();
 }
 
+
+onSubmit() {
+  this.submitted = true;
+  let formVlid= this.ReseauxForm.controls
+
+  // stop here if form is invalid
+  if (formVlid.name.errors || formVlid.link.errors) {
+      return;
+  } 
+this.addReseaux();
+}
+get f() { return this.ReseauxForm.controls; }
 }

@@ -28,12 +28,12 @@
                             <div class="ibox-tools">
                                 <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                 <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-99px, 20px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                    <a class="dropdown-item"  (click)="getImageById(item.id)" data-toggle="modal" data-target="#modalGalerie">Mettre à jour</a>
+                                    <a class="dropdown-item"  (click)="getImageById(item.id)" data-toggle="modal" data-target="#modalGalerie" (click)="selectFile($event)">Mettre à jour</a>
                                     <a class="dropdown-item" (click)="deleteimage(item.id)">Supprimer</a>
                                 </div>
                             </div>
                         </div>
-                        <img class="card-img-top" src="{{item.link}}">
+                        <img class="card-img-top" src="{{root_url}}/images/{{item.link}}">
                 </div>
                 
             </div>
@@ -56,21 +56,45 @@
             </button>
           </div>
           <div class="modal-body">
-            <form [formGroup]="galerieForm" (ngSubmit)="addimage()">
+            <form [formGroup]="galerieForm" (ngSubmit)="onSubmit()">
+                <input type="hidden" formControlName="id" required>
                 <div class="row">
-                    <div class="form-group col-6">
-                        <label for="name">Description</label>
-                        <input id="name01" type="text" class="form-control" formControlName="name" required>
+                    <div class="col-6">
+                        <div class="form-group col-12">
+                            <label for="name">Description</label>
+                            <input id="name01" type="text" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name?.errors }">
+                            <div *ngIf="submitted && f.name?.errors" class="invalid-feedback">
+                                <label *ngIf="submitted && f.name?.errors.required" id="name-error" class="help-block error" for="name" >le nom est nécessaire.</label>
+                                <label *ngIf="submitted && f.name?.errors.minlength" id="name-error" class="help-block error" for="name" >le nom Doit être au moins 4 caractères.</label>
+                                <label *ngIf="submitted && f.name?.errors.maxlength" id="name-error" class="help-block error" for="name" >Le nom est trop long.</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group col-12">
+                            <label for="name">keyword</label>
+                            <input id="keyword" type="text" class="form-control" formControlName="keyword" [ngClass]="{ 'is-invalid': submitted && f.keyword?.errors }">
+                            <div *ngIf="submitted && f.keyword?.errors" class="invalid-feedback">
+                                <label *ngIf="submitted && f.keyword?.errors.required" id="name-error" class="help-block error" for="name" >le nom est nécessaire.</label>
+                                <label *ngIf="submitted && f.keyword?.errors.minlength" id="name-error" class="help-block error" for="name" >le nom Doit être au moins 4 caractères.</label>
+                                <label *ngIf="submitted && f.keyword?.errors.maxlength" id="name-error" class="help-block error" for="name" >Le nom est trop long.</label>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group col-6">
-                        <label for="link">url</label>
-                        <input id="link01" type="text" class="form-control" formControlName="link" required>
+                        <label for="exampleFormControlFile1">Choisissez une image. (jpg, jpeg, png)</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="selectFile($event)" accept="image/png,image/jpeg" formControlName="link">
+                            <label *ngIf="submitted && this._data_Img !== undefined && !this.validSizeFile(_data_Img)" id="name-error" class="help-block error" for="name" >Le fichier ne doit pas dépasser 1 Mo</label>
+                            <label *ngIf="submitted && f.link?.errors && _data_Img == undefined" id="name-error" class="help-block error" for="name" >l'image est nécessaire.</label>
+
+                        <img class="card-img-top my-3" src="{{root_url}}/images/{{url}}" *ngIf="url.indexOf('data:') == -1">
+                        <img class="card-img-top my-3" src="{{url}}" *ngIf="url.indexOf('data:') !== -1">
+
+
                     </div>
-                    <div class="form-group col-6">
-                        <label for="name">keyword</label>
-                        <input id="keyword" type="text" class="form-control" formControlName="keyword" required>
-                    </div>
-                    <input type="hidden" formControlName="id" required>
+                    
+                    
+                    
+                   
                 </div>
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary mt-3" *ngIf="galerieForm.get('id').value == '' ">Ajouter</button>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -13,7 +13,6 @@ export class GalerieService {
 
 
   register(model: any){
-    console.log('hhhhhhh')
     return this.http.post(this.api+"/galerie",model);
   }
   suprimergalerie(id){
@@ -23,6 +22,12 @@ export class GalerieService {
     return this.http.get<any>(this.api+"/galerie/"+ id);
   }
   updateGalerie(model: any,id){
-    return this.http.put(this.api+"/galerie/"+ id,model);
+   /*  let headers = new HttpHeaders();
+    headers.set('Content-Type', 'multipart/form-data');
+    let options = { headers: headers }; */
+    return this.http.patch(this.api+"/galerie/"+ id,model);
+  }
+  uplaodimage(model: any, id){
+    return this.http.post(this.api+"/img/"+ id,model);
   }
 }

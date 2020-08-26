@@ -3,12 +3,14 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { JwtHelperService } from "@auth0/angular-jwt";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthentificationService {
-  api = 'http://127.0.0.1:8000/api';
+  api = environment.api_url;
+
   helper = new JwtHelperService();
 
   constructor(private http: HttpClient,private _router:Router) { }

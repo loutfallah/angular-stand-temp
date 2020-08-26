@@ -19,7 +19,7 @@ export class AddVideosComponent implements OnInit {
   
 
 
-  
+  submitted;
   _standData : Array<any>;
   _stand_id:number;
   _video : Array<any>;
@@ -35,13 +35,14 @@ export class AddVideosComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.submitted = false;
     this._route.params.subscribe(params => {
       this._stand_id = params['id'];
      this.getStandById(this._stand_id);
      this.VideoForm = this.formBuilder.group({
-      id: ['', Validators.required],
-      name: ['', Validators.required],
-      link: ['', Validators.required],
+      id: [''],
+      name: ['', [Validators.required, Validators.minLength(4),Validators.maxLength(50)]],
+      link: ['', [Validators.required,Validators.minLength(4),Validators.maxLength(200)]],
       stand_id:[]
     });
      Helpers.initLayout();
@@ -138,7 +139,7 @@ getEmbedUrl(item){
     })
    }
 
-   addVideo(id){
+   addVideo(){
     Swal.fire({
       title: 'Voulez-vous ajouter une Video?',
       icon: 'question',
@@ -179,4 +180,17 @@ getIdFromUrl(url){
   var YouTubeVideoId = require('youtube-video-id');
 return YouTubeVideoId(url);
 }
+
+onSubmit() {
+  this.submitted = true;
+  let formVlid= this.VideoForm.controls
+
+  // stop here if form is invalid
+  if (formVlid.name.errors || formVlid.link.errors) {
+      return;
+  }
+  this.addVideo();
+}
+get f() { return this.VideoForm.controls; }
+
 }

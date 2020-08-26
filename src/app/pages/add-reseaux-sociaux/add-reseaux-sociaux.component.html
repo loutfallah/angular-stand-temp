@@ -68,25 +68,32 @@
             </button>
           </div>
           <div class="modal-body">
-            <form [formGroup]="ReseauxForm" (ngSubmit)="addReseaux()">
+            <form [formGroup]="ReseauxForm" (ngSubmit)="onSubmit()">
                 <div class="row">
                     <div class="form-group col-6">
                         <label for="name">sélectionner un réseau social</label>
                         <!-- <input id="name04" type="text" class="form-control" formControlName="name" required> -->
-                        
-                        <select class="form-control" id="exampleFormControlSelect1" formControlName="name" required>
+                        <select class="form-control" id="exampleFormControlSelect1" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name?.errors }">
                             <option>facebook</option>
                             <option>youtube</option>
                             <option>twitter</option>
                             <option>google plus</option>
                             <option>instagram</option>
                             <option>linkedIn</option>
-
                         </select>
+                        <div *ngIf="submitted && f.name?.errors" class="invalid-feedback">
+                            <label *ngIf="submitted && f.name?.errors.required" id="name-error" class="help-block error" for="name" >le nom est nécessaire.</label>
+                        </div>
                     </div>
                     <div class="form-group col-6">
                         <label for="link">url</label>
-                        <input id="linkà3" type="text" class="form-control" formControlName="link" required>
+                        <input id="linkà3" type="text" class="form-control" formControlName="link" [ngClass]="{ 'is-invalid': submitted && f.link?.errors }">
+                        <div *ngIf="submitted && f.link?.errors" class="invalid-feedback">
+                            <label *ngIf="submitted && f.link?.errors.required" id="name-error" class="help-block error" for="name" >le line est nécessaire.</label>
+                            <label *ngIf="submitted && f.link?.errors.pattern" id="name-error" class="help-block error" for="name" >Veuillez saisir une URL valide.</label>
+                            <label *ngIf="submitted && f.link?.errors.maxlength" id="name-error" class="help-block error" for="name" >Le URL est trop long.</label>
+                            <label *ngIf="submitted && f.link?.errors.minlength" id="name-error" class="help-block error" for="name" >Le URL Doit être au moins 4 caractères.</label>
+                        </div>
                     </div>
                 </div>
                 <input type="hidden" formControlName="id" required>
